@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "[wifi] Bringing up wlan0..."
+
+# Load the driver if not auto-loaded (usually not needed)
+modprobe brcmfmac
+
+# Bring up the interface
+ip link set wlan0 up
+
+# Connect to WiFi
+wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+
+# Get IP address via DHCP
+udhcpc -i wlan0
+
