@@ -7,6 +7,7 @@ BR2_CCACHE=y
 
 # Toolchain
 BR2_TOOLCHAIN_BUILDROOT_CXX=y
+BR2_TOOLCHAIN_BUILDROOT_GLIBC=y
 
 # Linux headers
 BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
@@ -57,6 +58,7 @@ BR2_ROOTFS_OVERLAY="board/raspberrypi3/rootfs_overlay"
 
 # Target tools & libraries
 BR2_PACKAGE_OPENSSH=y
+BR2_PACKAGE_ALSA_LIB=y
 
 # Host tools & libraries
 BR2_PACKAGE_HOST_DOSFSTOOLS=y
