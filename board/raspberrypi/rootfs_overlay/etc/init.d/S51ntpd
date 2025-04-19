@@ -1,0 +1,22 @@
+#!/bin/sh
+
+NTPD_BIN=/usr/sbin/ntpd
+NTP_SERVER=pool.ntp.org
+
+case "$1" in
+  start)
+    $NTPD_BIN -n -q -p $NTP_SERVER
+    $NTPD_BIN -p $NTP_SERVER
+    ;;
+  stop)
+    killall ntpd
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    exit 1
+esac
+
+exit 0
